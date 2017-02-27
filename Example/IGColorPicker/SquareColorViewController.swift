@@ -14,6 +14,7 @@ import IGColorPicker
 class SquareColorPickerViewController: UIViewController, ColorPickerViewDelegate, ColorPickerViewDelegateFlowLayout {
     
     @IBOutlet weak var colorPickerView: ColorPickerView!
+    @IBOutlet weak var defaultButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,5 +61,10 @@ class SquareColorPickerViewController: UIViewController, ColorPickerViewDelegate
         return UIEdgeInsets.zero
     }
     
+    // MARK: - Actions
+    
+    @IBAction func tapOnDefault(_ sender: Any) {
+        colorPickerView.select(at: 0, animated: true)
+    }
 }
 

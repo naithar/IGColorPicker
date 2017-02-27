@@ -169,8 +169,16 @@
                             <constraint firstItem="kpr-GN-gR5" firstAttribute="centerY" secondItem="1PE-cd-UM5" secondAttribute="centerY" id="mH0-aR-AwF"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="IKf-JM-kRN">
+                        <barButtonItem key="rightBarButtonItem" title="Default" id="LrS-DF-DDD">
+                            <connections>
+                                <action selector="tapOnDefault:" destination="X96-pC-TZY" id="LOk-cQ-bsX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="colorPickerView" destination="kpr-GN-gR5" id="msT-2t-onW"/>
+                        <outlet property="defaultButton" destination="LrS-DF-DDD" id="LST-2D-ATj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89u-Gm-4IW" userLabel="First Responder" sceneMemberID="firstResponder"/>

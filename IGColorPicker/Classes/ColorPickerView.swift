@@ -109,6 +109,23 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         }
     }
     
+    // MARK: - Methods
+    
+    public func select(at index: Int, animated: Bool) {
+        guard colors.indices.contains(index) else {
+            fatalError("ERROR ColorPickerView - there's no color at \(index) index")
+            return
+        }
+        
+        indexSelectedColor = index
+        
+        collectionView.selectItem(at: IndexPath(item: index, section: 0), animated: animated, scrollPosition: .centeredHorizontally)
+    }
+    
+}
+
+extension ColorPickerView {
+    
     // MARK: - UICollectionViewDataSource
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
