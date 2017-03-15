@@ -14,20 +14,24 @@ import Foundation
 /// https://gist.github.com/gotev/76df9006674762859626846cf171ff80
 extension UIColor {
     
-    var redValue: CGFloat{
-        return cgColor.components! [0]
+    var redValue: CGFloat {
+        guard let components = cgColor.components, components.count > 0 else { return 0 }
+        return components[0]
     }
     
-    var greenValue: CGFloat{
-        return cgColor.components! [1]
+    var greenValue: CGFloat {
+        guard let components = cgColor.components, components.count > 1 else { return 0 }
+        return components[1]
     }
     
-    var blueValue: CGFloat{
-        return cgColor.components! [2]
+    var blueValue: CGFloat {
+        guard let components = cgColor.components, components.count > 2 else { return 0 }
+        return components[2]
     }
     
-    var alphaValue: CGFloat{
-        return cgColor.components! [3]
+    var alphaValue: CGFloat {
+        guard let components = cgColor.components, components.count > 3 else { return 1 }
+        return components[3]
     }
     
     var isWhiteText: Bool {
