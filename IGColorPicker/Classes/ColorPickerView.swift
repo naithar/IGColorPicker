@@ -120,6 +120,11 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         
         cell.backgroundColor = colors[indexPath.item]
         
+        if colors[indexPath.item] == .white {
+            cell.layer.borderWidth = 0.5
+            cell.layer.borderColor = UIColor.black.cgColor
+        }
+        
         if style == .circle {
             cell.layer.cornerRadius = cell.bounds.width / 2
         }
